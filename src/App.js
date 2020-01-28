@@ -1,24 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Dropdown} from 'semantic-ui-react'
+
+import ModifiableList from './ModifiableList.js';
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ModifiableList items={["a", "b"]}
+                      getItemInput={(value, onValueChange) => (
+                        <Dropdown
+                          placeholder='Select currency to add'
+                          fluid
+                          search
+                          selection
+                          options={[{key: "a", value: "a", text: "a"}, {key: "b", value: "b", text: "b"}, {
+                            key: "c",
+                            value: "c",
+                            text: "c"
+                          }]}
+                          value={value}
+                          onChange={(event, data) => {
+                            onValueChange(data.value);
+                          }}
+                        />)}
+                      onAdd={() => {
+                      }}
+                      onDelete={() => {
+                      }}
+                      onClear={() => {
+                      }}
+      />
     </div>
   );
 }
