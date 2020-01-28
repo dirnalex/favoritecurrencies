@@ -1,0 +1,11 @@
+.AddItem {
+    display: flex;
+}
+
+.AddItem > * {
+    flex: 1 1 auto;
+}
+
+.AddItem > .addButton {
+    flex: 0 0 auto;
+}

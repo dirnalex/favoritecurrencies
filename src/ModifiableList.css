@@ -1,0 +1,47 @@
+.ModifiableList .controls {
+    display: flex;
+    flex-direction: column;
+}
+
+.ModifiableList button {
+    width: 90px;
+    height: 30px;
+    margin: 5px;
+}
+
+.ModifiableList .controls .addContainer {
+    flex: 0 0 auto;
+}
+
+.ModifiableList .controls .clearButton {
+    flex: 0 0 auto;
+    align-self: flex-end;
+}
+
+.ModifiableList .list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.ModifiableList .list .item {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ModifiableList .list .item:nth-child(2n-1) {
+    background-color: aliceblue;
+}
+
+.ModifiableList .list .item .itemText {
+    flex: 1 1 auto;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 10px;
+}
+
+
+.ModifiableList .list .item .removeButton {
+    flex: 0 0 auto;
+}

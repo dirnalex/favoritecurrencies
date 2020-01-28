@@ -1,16 +1,17 @@
 import React, {useState} from 'react';
-import {Button, Icon} from "semantic-ui-react";
 
-const AddItem = ({getInput, onAdd}) => {
-  const [addedValue, setAddedValue] = useState("");
+import './AddItem.css';
+
+const AddItem = ({getInput, onAdd, className = ""}) => {
+  const [valueToAdd, setValueToAdd] = useState("");
   return (
-    <div>
-      {getInput(addedValue, setAddedValue)}
-      <Button icon onClick={() => {
-        onAdd(addedValue);
+    <div className={`AddItem ${className}`}>
+      {getInput(valueToAdd, setValueToAdd)}
+      <button className="addButton" onClick={() => {
+        onAdd(valueToAdd);
       }}>
-        <Icon name='add'/>
-      </Button>
+        Add
+      </button>
     </div>
   );
 };
